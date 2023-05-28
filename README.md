@@ -6,4 +6,5 @@
 
 # For Windows
     * Download kubectl.exe and add it to path
+    * Install minikube
     * Turn on Hyper-V feature (Windows Hypervisor)
