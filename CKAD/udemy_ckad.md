@@ -94,8 +94,41 @@ kubectl run redis --image=redis:alpine --dry-run=client -oyaml > redis-pod.yaml
 kubectl create service clusterip --help
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
+# Section_3_configuration
+
+- 37. Define, Build, and Modify container images 
+
+FROM
+RUN 
+COPY 
+ENTRYPOINT 
+
+docker images 
+
+- 39. Docker - commands and arguments 
+
+docker run ubuntu sleep 5
+
+ENTRYPOINT 
+is the command instruction 
+
+FROM        Ubuntu 
+ENTRYPOINT  ["sleep"]
+CMD         ["5"]       <-- default 
+
+docker run ubuntu-sleeper 10
+                          ^
+                          entryPoint instr
 
 
+
+
+# ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
+# Section_4_
+
+- 01. a subTitle 
+
+- 01. a subTitle 
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
 
