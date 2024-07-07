@@ -149,7 +149,7 @@ spec:
 
 - 45. ConfigMaps 
 create config map
-inject config map 
+inject config map into pod
 
 config-map.yaml
 apiVersion: v1
