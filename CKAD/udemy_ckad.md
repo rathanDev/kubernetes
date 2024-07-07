@@ -120,7 +120,84 @@ docker run ubuntu-sleeper 10
                           ^
                           entryPoint instr
 
+- 41. Quick note on editing pod and deployment
 
+* For Pod
+kubectl edit pod <podName>
+
+kubectl get pod webapp -o yaml > my-new-pod.yaml
+vi my-new-pod.yaml
+kubectl delete pod webapp
+kubectl create -f my-new-pod.yaml
+
+* For Deployment
+kubectl edit deployment my-deployment
+
+k replace --force -f /tmp/kubectk-edit-222.yaml
+
+- 43. Commands and Arguments
+
+spec:
+  containers:
+  - command:
+    - sleep
+    - "4800"
+    image: ubuntu
+    name: ubuntu
+
+- 44. Environment variables
+
+- 45. ConfigMaps 
+create config map
+inject config map 
+
+config-map.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: app-config
+data:
+    APP_COLOR: blue
+    APP_MODE: prod 
+
+kubectl create configmap -f cm.yaml
+
+kubectl describe configMaps 
+
+- 47. Solution ConfigMaps 
+
+kubectl get pods
+k get pod webapp-color -o yaml > pod.yaml
+vi pod.yaml #makeChanges 
+
+- 48. Secrets 
+Create secret 
+Inject into pod
+
+apiVersion:
+kind:
+metadata:
+    name: app-secret
+data:
+    DB_Host: mysql
+    DB_User: <root>
+    DB_Password: <password>
+
+kubectl describe secrets 
+k get secret app-secret -o yaml
+
+* secrets are not encrypted, just encoded 
+
+secrets stored in ETCD are not encrypted
+
+Encrypting data at rest 
+
+
+
+
+
+- 99. A sub tititle
+- 99. A sub tititle
 
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
