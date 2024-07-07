@@ -39,8 +39,63 @@ spec:
 
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
+- 27. Solution - Deployments Optional
+
+kubectl create deployment --help 
+
+kubectl create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=3
+kubectl get deploy 
+
+- 29. Recap - Namespaces 
+
+--namespace=dev
+
+kubectl get pods --namespace=dev
+
+kubectl get ns 
+kubectl get pods --all-namespaces
+
+kubectl get service -n=marketing 
+
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
+
+- 31. Solution. Namespaces
+
+kubectl get namespaces
+or
+kubectl get ns 
+
+kubectl get pods --namespace=research
+or
+kubectl get pods -n=research
+
+kubectl get services --namespace=dev
+or
+kubectl get svc -n=dev
+
+db-service.dev.svc.cluster.local
+
+- 32. Certification Tip
+
+--dry-run
+--dry-run=client 
+-o yaml
+
+Generate POD Manifest YAML file (don't create it [--dry-run])
+kubectl run nginx --image=nginx --dry-run=client -o yaml
+
+- 33. Imperative commands 
+
+kubectl run redis --image=redis:alpine --dry-run=client -oyaml > redis-pod.yaml 
+
+- 34. Solution
+
+kubectl create service clusterip --help
+
+# ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
+
+
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
 
