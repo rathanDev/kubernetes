@@ -193,6 +193,21 @@ secrets stored in ETCD are not encrypted
 Encrypting data at rest 
 
 
+- 53. Encrypting Secret data at Rest 
+
+k get secret my-secret -o yaml 
+echo ""sdagagxzc" | base64 --decode
+
+etcdctl     <- et cd cuttle utility
+
+- 56. Security contexts
+
+k exec ubuntu-sleeper -- whoami 
+
+spec:
+    securityContext:
+        runAsUser: 1010
+
 
 
 
