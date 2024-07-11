@@ -202,11 +202,43 @@ etcdctl     <- et cd cuttle utility
 
 - 56. Security contexts
 
+whoami
+
 k exec ubuntu-sleeper -- whoami 
 
 spec:
     securityContext:
         runAsUser: 1010
+
+k delete pod ubuntu-sleeper --force
+
+- 58. Service Account 
+
+UserAccount vs ServiceAccount 
+
+- 64. Taints and tolerations
+
+k run bee --image=nginx --dry-run=client -o yaml
+
+k run bee --image=nginx --dry-run=client -o yaml > bee.yaml
+
+add toleration section
+
+k get pods -o wide 
+
+k taint node controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+                                                                          ^ to remove
+
+- 67. Node Selectors
+
+spec:
+    nodeSelector: large
+
+Node Affinity and Anti Affinity
+
+affinity:
+    nodeAffinity:
+        ...
 
 
 
