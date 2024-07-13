@@ -241,7 +241,64 @@ affinity:
         ...
 
 
+- 75. Multi container pods
 
+Ambassador
+Adapter
+Sidecar
+
+SideCar - logging agent
+
+adapter - converting logs to a common format 
+
+Ambassador - directing the logs to right db
+
+k -n elastic-stack exec -it app -- cat /log/app.log
+
+
+- 99. Practice - Multi container pods
+
+k run yellow --image=redis --dry-run=client -o yaml
+
+k -n elatic-stack logs kibana
+
+k logs app -n elastic-stack  <tab>
+
+k -n es exec -it app -- cat /app/log
+
+
+- 78. Init Containers
+https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+
+
+- 81. Readiness and Liveness Probe
+
+Observability 
+
+POD conditions:
+PodScheduled
+Initialized
+ContainersReady
+Ready
+
+readinessProbe:
+    httpGet:
+        path: /api/ready
+        port: 8080
+    initialDelaySeconds: 10
+    periodSeconds: 5
+
+- 82. Liveness Probes
+
+livenessProbe:
+    httpGet:
+        path: /api/healthy
+        port: 8080
+
+
+- 85. Container logging
+
+k logs simple-node simple-app
 
 - 99. A sub tititle
 - 99. A sub tititle
