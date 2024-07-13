@@ -300,8 +300,114 @@ livenessProbe:
 
 k logs simple-node simple-app
 
-- 99. A sub tititle
-- 99. A sub tititle
+- 88. Monitor and Debug Applications
+
+node level matrix 
+
+Metrix server   -   CKAD 
+Prometheus 
+Elastic stack
+Datadog
+Dynatrace
+
+Kubelet 
+cAdvisor 
+
+> k top node
+
+git clone https://github.com/kodekloudhub/kubernetes-metrics-server.git
+
+k create -f .
+
+k get services --all-namespaces
+
+k top node
+vs
+k top pod 
+
+- 91. Labels, Selectors and Annotations
+
+Labels and selectors 
+are standard method to group things together 
+
+k get pods --selector env=dev 
+
+k get pods --selector bu=finance
+
+k get all --selector env=prod
+
+k get all --selector --no-headers | wc -l
+
+wc - word count 
+
+k get all --selector env=prod,bu=finance,tier=frontend
+
+- 94. Rolling Updates & Rollback in Deployments 
+
+Recreate vs RollingUpdate
+
+deployment-def.yaml
+
+image: nginx:1.7.1 <--- upgraded
+
+> k apply -f dep-def.yaml
+* it'll do rolling update
+
+k rollout undo deploymnent/myapp-deployment
+
+k create -f dep.yaml
+k get deployments
+k apply -f dep.yaml
+k set image dep/myapp-dep nginx=nginx:1.9.1
+k rollout status dep/myapp-dep
+k rollout history dep/myapp-dep
+k rollout undo dep/myapp-dep
+
+- 95. Updating a deployment 
+- 96. Demo deployments 
+
+--record 
+    ^
+    add to change cause 
+
+- 99. Deployments - Blue Green 
+
+- 100. Deployments - Canary
+
+Route traffic to both versions
+Route a small percentage of traffic to V2
+
+myapp-primary.yaml
+spec:
+    containers:
+    - name:
+      image: 2
+
+myapp-canary.yaml
+spec:
+    containers:
+    - name:
+      image: 2
+
+k scale deploy frontend --replicas=2
+
+- 103. Jobs
+kind: Job
+Types of workloads 
+
+restartPolicy: Never  or  OnFailure
+
+- 104. CronJobs
+kind: CronJob
+
+
+
+
+
+- 103. A sub tititle
+- 103. A sub tititle
+
+
 
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
