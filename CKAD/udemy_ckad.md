@@ -87,7 +87,7 @@ kubectl run nginx --image=nginx --dry-run=client -o yaml
 
 - 33. Imperative commands 
 
-kubectl run redis --image=redis:alpine --dry-run=client -oyaml > redis-pod.yaml 
+kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis-pod.yaml 
 
 - 34. Solution
 
@@ -363,6 +363,10 @@ k rollout status dep/myapp-dep
 k rollout history dep/myapp-dep
 k rollout undo dep/myapp-dep
 
+k get pods -n some-namespace
+
+k create ingress -h             # help
+
 - 95. Updating a deployment 
 - 96. Demo deployments 
 
@@ -401,21 +405,50 @@ restartPolicy: Never  or  OnFailure
 kind: CronJob
 
 
+# ----- ----- ----- # ----- ----- ----- # 
+# Section_7_Services_and_Networking
+
+- 107. Services
+
+NodePort
+ClusterIP
+LoadBalancer
+
+Services - NodePort
+
+- 108. Services - Cluster IP
+
+
+- 111. Ingress Networking 
+
+k8s version 1.20+
+
+Article 
+https://www.udemy.com/course/certified-kubernetes-application-developer/learn/lecture/28046958#announcements
+
+k get pods -A    
+            ^
+            all namespaces
 
 
 
-- 103. A sub tititle
-- 103. A sub tititle
+- 109. A sub tititle
+- 109. A sub tititle
+- 109. A sub tititle
 
 
 
 
-# ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
-# Section_4_
 
-- 01. a subTitle 
 
-- 01. a subTitle 
+# ----- ----- ----- # ----- ----- ----- # 
+# Section_8_ANB
+
+
+- 120. A sub tititle
+- 121. A sub tititle
+
+
 
 # ----- ----- ----- # ----- ----- ----- # ----- ----- ----- #
 
