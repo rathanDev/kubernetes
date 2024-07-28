@@ -463,6 +463,18 @@ k -n webhook-demo create secret tls webhook-server-tls \
     --cert ..   \
     --key ..
 
+- 155. API Versions 
+
+- 157. API Deprecations 
+
+single API can support multiple versions 
+
+API deprecation policy 
+    rule 1
+    rule 2
+
+
+- 162. Custom Controllers
 
 
 - 109. A sub tititle
