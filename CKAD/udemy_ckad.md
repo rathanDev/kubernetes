@@ -432,6 +432,39 @@ k get pods -A
 
 
 
+- 149. Solution cluster roles 
+
+k create clusterrolebinding michelle-storage-admin --user=michelle --clusterrole=storage-admin
+
+k describe clusterrolebinding michelle-storage-admin
+
+k --as michelle get storageclasses 
+
+
+- 150. Admission Controllers 
+
+Securing kubernetes 
+
+Kubectl     ->  Kube ApiServer  ->  create pod 
+                authentication 
+                authorization 
+
+Authorization - RBAC 
+
+Admission controller - for advanced security measures 
+    don't want the images to come from docker public repository (only from your private repo)
+    
+
+- 154. Validating and Mutating Admission controllers 
+
+Mutates first then validate 
+
+k -n webhook-demo create secret tls webhook-server-tls \
+    --cert ..   \
+    --key ..
+
+
+
 - 109. A sub tititle
 - 109. A sub tititle
 - 109. A sub tititle
