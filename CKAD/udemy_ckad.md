@@ -476,8 +476,27 @@ API deprecation policy
 
 - 162. Custom Controllers
 
+# ----- ----- ----- # ----- ----- ----- # 
+# Section_10_HelmFundamentals
 
-- 109. A sub tititle
+- 164. Helm introduction 
+
+package manager 
+
+- 165. Install Helm
+
+
+- 168. Helm concepts 
+
+
+# ----- ----- ----- # ----- ----- ----- # 
+# Section_12_CertificationTips 
+
+- 172. Time management 
+
+
+
+
 - 109. A sub tititle
 - 109. A sub tititle
 
@@ -487,7 +506,7 @@ API deprecation policy
 
 
 # ----- ----- ----- # ----- ----- ----- # 
-# Section_8_ANB
+# Section_10_HelmFundamentals
 
 
 - 120. A sub tititle
